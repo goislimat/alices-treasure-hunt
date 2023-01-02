@@ -18,7 +18,9 @@ interface AnswerResponse {
 }
 
 async function getEnigmaAnswer(eid: string): Promise<AnswerResponse> {
-  const response = await fetch(`${process.env.HOSTNAME}/api/answer/${eid}`);
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/answer/${eid}`
+  );
   const data = await response.json();
   return data;
 }

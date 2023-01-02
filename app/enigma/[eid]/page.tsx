@@ -36,7 +36,9 @@ const ENIGMAS_IMAGES: EnigmaImages = {
 };
 
 async function getEnigmaData(eid: string): Promise<EnigmaResponse> {
-  const res = await fetch(`${process.env.HOSTNAME}/api/enigma/${eid}`);
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/enigma/${eid}`
+  );
   const data = await res.json();
   return data;
 }

@@ -3,7 +3,9 @@ interface CongratulationsResponse {
 }
 
 async function getCongratulationsCode(): Promise<CongratulationsResponse> {
-  const res = await fetch(`${process.env.HOSTNAME}/api/congratulations`);
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/congratulations`
+  );
   const data = await res.json();
   return data;
 }
